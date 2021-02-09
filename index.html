@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+    }
+    img {
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <img src="img/Front-21.jpg" id="logo" alt="">
+  <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+  <script>
+    nextParticle = new NextParticle({
+      image: document.all.logo,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      maxWidth: window.innerWidth * 0.8,
+      particleGap: 2
+    });
+
+    window.onresize = function() {
+      if(window.innerWidth > 600) {
+        nextParticle.width = window.innerWidth - 20;
+        nextParticle.height = window.innerHeight - 20;
+        nextParticle.start();
+      }
+    }
+  </script>
+</body>
+</html>
